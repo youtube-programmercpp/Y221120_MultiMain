@@ -1,0 +1,18 @@
+﻿close と open で redirection
+
+close(fileno(stdin)) によって stdin をクローズする
+close(0) でも良い
+
+これでファイル記述子 0 番は閉じられる。
+
+int fd = open(...) によってファイルを開く。
+dup を行うことで 0 番のファイル記述子となることが期待される。
+close(fd)
+
+
+今回は dup を省略してみた。それが良いことかどうかは分からないが…。
+
+
+
+
+
